@@ -45,15 +45,16 @@
 </body>
 </html>
 <script type="text/javascript">
-    let video = $('#my-video')[0];
+  // let video = $('#my-video')[0];
 	$('.pause').click(function(){
-	    video.pause();
+	    $('vjs-play-control').addClass('vjs-playing').removeClass('vjs-paused')
 	    $(this).css('display','none');
 	    $('.play').css('display','block')
 	});
    
    $('.play').click(function(){
-	    video.play();
+	    // video.play();
+	    $('vjs-play-control').addClass('vjs-paused').removeClass('vjs-playing')
 	    $(this).css('display','none');
 	    $('.pause').css('display','block')
 	});
