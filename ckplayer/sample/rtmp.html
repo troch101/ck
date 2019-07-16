@@ -1,53 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link href="https://vjs.zencdn.net/5.5.3/video-js.css" rel="stylesheet">
-</head>
-<style type="text/css">
- .vjs-paused .vjs-big-play-button,
-.vjs-paused.vjs-has-started .vjs-big-play-button {
-    display: block;
-}
-.video-js .vjs-big-play-button{
-    font-size: 2.5em;
-    line-height: 2.3em;
-    height: 2.5em;
-    width: 2.5em;
-    -webkit-border-radius: 2.5em;
-    -moz-border-radius: 2.5em;
-    border-radius: 2.5em;
-    background-color: #73859f;
-    background-color: rgba(115,133,159,.5);
-    border-width: 0.15em;
-    margin-top: -1.25em;
-    margin-left: -1.75em;
-}
-/* 中间的播放箭头 */
-.vjs-big-play-button .vjs-icon-placeholder {
-    font-size: 1.63em;
-}
-/* 加载圆圈 */
-.vjs-loading-spinner {
-    font-size: 2.5em;
-    width: 2em;
-    height: 2em;
-    border-radius: 1em;
-    margin-top: -1em;
-    margin-left: -1.5em;
-}
-video{
-	margin:0 auto;
-}
-</style>
-<body>
-  <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width=960 height=540  data-setup='{"autoplay":true}'>
-    <source src="http://116.199.5.52:8114/00000000/index.m3u8?&Fsv_ctype=LIVES&Fsv_otype=1&FvSeid=5abd1660af1babb4&Fsv_filetype=1&Fsv_ctype=LIVES&Fsv_cid=0&Fsv_chan_hls_se_idx=188&Fsv_rate_id=0&Fsv_SV_PARAM1=0&Fsv_ShiftEnable=0&Fsv_ShiftTsp=0&Provider_id=&Pcontent_id=&Fsv_CMSID=&Fsv_otype=1'>
-   <!--  <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-    </p> -->
-  </video>
 
-  <script src="https://vjs.zencdn.net/5.5.3/video.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>ckplayer</title>
+		
+		<style type="text/css">body{margin:0;padding:0px;font-family:"Microsoft YaHei",YaHei,"微软雅黑",SimHei,"黑体";font-size:14px}</style>
+
+	</head>
+
+	<body>
+		<div id="video" style="width: 600px; height: 400px;"></div>
+		<script type="text/javascript" src="../ckplayer/ckplayer.js"></script>
+		<script type="text/javascript">
+			var videoObject = {
+				container: '#video', //容器的ID或className
+				variable: 'player',//播放函数名称
+				autoplay:true,
+				live:true,
+				video: 'http://116.199.5.52:8114/00000000/index.m3u8?&Fsv_ctype=LIVES&Fsv_otype=1&FvSeid=5abd1660af1babb4&Fsv_filetype=1&Fsv_ctype=LIVES&Fsv_cid=0&Fsv_chan_hls_se_idx=188&Fsv_rate_id=0&Fsv_SV_PARAM1=0&Fsv_ShiftEnable=0&Fsv_ShiftTsp=0&Provider_id=&Pcontent_id=&Fsv_CMSID=&Fsv_otype=1'
+			};
+			var player = new ckplayer(videoObject);
+		</script>
+	</body>
+
 </html>
