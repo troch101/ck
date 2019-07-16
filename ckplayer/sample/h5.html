@@ -34,32 +34,9 @@
     <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width=960 height=540 data-setup='{"autoplay":true}'>
 	    <source src="rtmp://pili-live-rtmp.findcoach.com.cn/q3j4/php-sdk-test1563246213" type='rtmp/vlc'>
 	</video>
-	<script type="text/javascript">
-  // let video = $('#my-video')[0];
-	// $('.pause').click(function(){
-	//     $('vjs-play-control').addClass('vjs-playing').removeClass('vjs-paused')
-	//     $(this).css('display','none');
-	//     $('.play').css('display','block')
-	// });
    
- //   $('.play').click(function(){
-	//     // video.play();
-	//     $('vjs-play-control').addClass('vjs-paused').removeClass('vjs-playing')
-	//     $(this).css('display','none');
-	//     $('.pause').css('display','block')
-	// });
-
-var videoObject = {
-				//播放器ID，第一个字符不能是数字，用来在使用多个播放器时监听到的函数将在所有参数最后添加一个参数用来获取播放器的内容
-				container: '#my-video', //容器的ID或className
-				variable: 'player', //播放函数名称
-}
-var player = new ckplayer(videoObject);
-
-</script>
-   <button type="button" class="button" onclick="player.playOrPause()">播放/暂停</button>
-   <!-- <div class="button play"></div>
-   <div class="button pause"></div> -->
+   <div class="button play"></div>
+   <div class="button pause"></div>
  </div>
 
   
@@ -68,25 +45,19 @@ var player = new ckplayer(videoObject);
 </body>
 </html>
 <script type="text/javascript">
-  // let video = $('#my-video')[0];
-	// $('.pause').click(function(){
-	//     $('vjs-play-control').addClass('vjs-playing').removeClass('vjs-paused')
-	//     $(this).css('display','none');
-	//     $('.play').css('display','block')
-	// });
+  let video = $('#my-video')[0];
+	$('.pause').click(function(){
+	    video.pause();
+	    $(this).css('display','none');
+	    $('.play').css('display','block')
+	});
    
- //   $('.play').click(function(){
-	//     // video.play();
-	//     $('vjs-play-control').addClass('vjs-paused').removeClass('vjs-playing')
-	//     $(this).css('display','none');
-	//     $('.pause').css('display','block')
-	// });
+   $('.play').click(function(){
+	    video.play();
+	    $(this).css('display','none');
+	    $('.pause').css('display','block')
+	});
 
-var videoObject = {
-				//播放器ID，第一个字符不能是数字，用来在使用多个播放器时监听到的函数将在所有参数最后添加一个参数用来获取播放器的内容
-				container: '#my-video', //容器的ID或className
-				variable: 'player', //播放函数名称
-}
-var player = new ckplayer(videoObject);
+
 
 </script>
