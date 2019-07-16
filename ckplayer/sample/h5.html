@@ -8,13 +8,16 @@
 	  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
         <!-- 引入的videojs-flash.js插件主要是为播放rtmp视频流-->
         <script src="https://cdn.jsdelivr.net/npm/videojs-flash@2/dist/videojs-flash.min.js"></script>
+	    <script>  
+    videojs.options.flash.swf = "https://cdn.bootcss.com/videojs-swf/5.4.2/video-js.swf";  
+  </script>  
     </head>
     <body>
-	    <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="480" data-setup="{}">      
-		    <source src="rtmp://58.200.131.2:1935/livetv/hunantv"/>       
-		  </video>      
-       <script>  
-    videojs.options.flash.swf = "https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js/video-js.swf";  
-  </script>  
+	    <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="640" height="268"
+		       data-setup='{ "techOrder": ["flash"] }'>
+		  <source src="rtmp://58.200.131.2:1935/livetv/hunantv'>
+		</video>
+	   
+       
     </body>
 </html>
