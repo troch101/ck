@@ -34,9 +34,9 @@
     <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width=960 height=540 data-setup='{"autoplay":true}'>
 	    <source src="rtmp://pili-live-rtmp.findcoach.com.cn/q3j4/php-sdk-test1563246213" type='rtmp/vlc'>
 	</video>
-   
-   <div class="button play"></div>
-   <div class="button pause"></div>
+   <button type="button" class="button" onclick="player.playOrPause()">播放/暂停</button>
+   <!-- <div class="button play"></div>
+   <div class="button pause"></div> -->
  </div>
 
   
@@ -44,7 +44,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </body>
 </html>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   // let video = $('#my-video')[0];
 	$('.pause').click(function(){
 	    $('vjs-play-control').addClass('vjs-playing').removeClass('vjs-paused')
@@ -61,4 +61,4 @@
 
 
 
-</script>
+</script> -->
