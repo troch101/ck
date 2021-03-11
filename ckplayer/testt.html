@@ -10,7 +10,7 @@
 <source src="http://lz.jokme.com/39e942f7f20d5431a44673b87c5c93fc60e80f63.mp4">
 </video> -->
 <div id="imgbox">摇一摇</div>
-<div id="count">0</div>
+<div class="count">0</div>
 <script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
 	
 <script type="text/javascript">
@@ -45,13 +45,13 @@
 	            count++;  
 	            //摇动5次都在阀值内开始抽奖
 	            if(count==5){
-					time2 = new Date().getTime();
-					count = 0;
-					alert("抽奖的逻辑开始");
-					//$("#form").submit();
-					//return;
+			time2 = new Date().getTime();
+			count = 0;
+			alert("抽奖的逻辑开始");
+			//$("#form").submit();
+			//return;
 	            }
-				$("#count").html(count);
+		   $(".count").html(count);
 		}           
 	    	last_x = x;  
 	        last_y = y;  
