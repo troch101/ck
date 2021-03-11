@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title></title>
+</head>
+<body>
+<!-- <video id="video" controls="controls">
+<source src="http://lz.jokme.com/39e942f7f20d5431a44673b87c5c93fc60e80f63.mp4">
+</video> -->
+<div id="imgbox">摇一摇</div>
+<div id="count">0</div>
+<script type="text/javascript">
+//需要判断浏览器是否支持  
+    if (window.DeviceMotionEvent) {  
+    	window.addEventListener('devicemotion', deviceMotionHandler, false);    
+    } else{  
+    	alert("不支持摇一摇功能"); 
+    }  
+    var shake_threshold = 2000;//摇动的阀值  
+    var lastUpdate = 0;//变量保存上次更新的时间  
+    var x, y, z, last_x, last_y, last_z;// x、y、z记录三个轴的数据以及上一次出发的时间  
+    var count = 0;//计数器  
+    var time1; 
+    var time2;
+    function deviceMotionHandler(eventData) {  
+	    if(count==1){
+	   	time1 = new Date().getTime();
+	    }
+	    var acceleration = eventData.accelerationIncludingGravity;//获取含重力的加速度  
+	    var curTime = new Date().getTime();//获取当前时间  
+	    var diffTime = curTime -lastUpdate;//时间差  
+	    //固定时间段  
+	  　if (diffTime > 100) {  
+		lastUpdate = curTime;  
+		x = acceleration.x;  
+		y = acceleration.y;  
+		z = acceleration.z;  
+		var speed = Math.abs(x+y+z-last_x-last_y-last_z) / diffTime * 10000;//速度  
+		//在阀值内  
+	        if(speed > shake_threshold){  
+	            count++;  
+	            //摇动5次都在阀值内开始抽奖
+	            if(count==5){
+					time2 = new Date().getTime();
+					count = 0;
+					alert("抽奖的逻辑开始");
+					//$("#form").submit();
+					//return;
+	            }
+				$("#count").html(count);
+		}           
+	    	last_x = x;  
+	        last_y = y;  
+	        last_z = z;  
+	    }  
+    }   
+</script>
+</body>
+</html>
+
